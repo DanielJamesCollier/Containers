@@ -8,11 +8,11 @@ class StaticArray {
 public:
     StaticArray() = default;
     ~StaticArray() = default;
-    StaticArray(StaticArray & rhs) = default;
+    StaticArray(StaticArray const & rhs) = default;
     StaticArray(StaticArray && rhs) = default;
     
-    StaticArray & operator = (StaticArray &) = default;
-    StaticArray & operator = (StaticArray &&) = default;
+    StaticArray & operator = (StaticArray const & rhs) = default;
+    StaticArray & operator = (StaticArray && rhs) = default;
     
     // read and write access
     TYPE & operator [] (size_t index);
